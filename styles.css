@@ -1,5 +1,6 @@
 @font-face {
-    font-family: 'Utopium';
+    font-family: '';
+    src: url('Utopium-Regular.otf') format('opentype');
 }
 * {
     margin: 0;
