@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Phantom</title>
+</head>
+<body>
+    <div class="container"></div>
+    <br>
+    <h1>Phantom</h1>
+    <button id="downloadBtn">Download</button>
+    
+    <button id="spawnBoxBtn">Spawn Box</button>
+</body>
+
+
+<script>
+    const backgroundLayer = document.querySelector('.container');
+
+    document.getElementById("downloadBtn").addEventListener("click", function() {
+        window.location.href = "download.html";
+    });
+
+    document.getElementById("spawnBoxBtn").addEventListener("click", function() {
+        const circle = document.createElement("div");
+    circle.classList.add("circle");
+
+    const size = 50;
+    const leftPosition = Math.random() * window.innerWidth;
+    
+    circle.style.width = `${size}px`;
+    circle.style.height = `${size}px`;
+    circle.style.left = `${leftPosition}px`;
+    circle.style.backgroundColor = `hsl(50,50,50)`;
+
+    backgroundLayer.appendChild(circle);
+
+    setTimeout(() => {
+        circle.remove();
+    }, 4000);
+    });
+</script>
